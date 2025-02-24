@@ -2,12 +2,16 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Sign_In } from "./pages/authentication/Sign_In";
 import { Sign_Up } from "./pages/authentication/Sign_Up";
+import { NotFound } from "./pages/notfound/NotFound";
+import { Home } from "./components/landingPage/Home";
 
 function App() {
   return (
     <>
       <BrowserRouter>
         <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="*" element={<NotFound />} />
           <Route path="/signin" element={<Sign_In />} />
           <Route path="/signup" element={<Sign_Up />} />
         </Routes>
